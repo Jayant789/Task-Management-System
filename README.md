@@ -67,7 +67,7 @@ Features and Implementation:
  
 Time Estimates: 
 Phase 1 (By June 23st, 11:59 PM): 
-●  Documenting approach, database schema, and time estimates (  1 Day  ). 
+	●  Documenting approach, database schema, and time estimates (  1 Day  ). 
 
 Phase 2 (By June 28th, 11:59 PM): Backend Development with Flask and PyMongo (1.5 Days): 
 	●  June 23rd-24th: 
