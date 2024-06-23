@@ -73,16 +73,16 @@ A dedicated login page will be implemented on the frontend. Users will be able t
 
 ### Phase 1 (By June 23rd, 11:59 PM)
 
-- Documenting approach, database schema, and time estimates (1 Day).
+ [x]  Documenting approach, database schema, and time estimates (1 Day).
 
 ### Phase 2 (By June 28th, 11:59 PM)
 
 #### Backend Development with Flask and PyMongo (1.5 Days)
 
 - June 23rd-24th:
-  - Flask project setup, user model and authentication logic.
-  - Implement Flask endpoints for CRUD operations (Create, Read, Update, Delete) on tasks.
-  - Integrate MongoDB interaction with PyMongo driver for data persistence.
+  [ ] Flask project setup, user model and authentication logic.
+  [x]  Implement Flask endpoints for CRUD operations (Create, Read, Update, Delete) on tasks.
+  [x] Integrate MongoDB interaction with PyMongo driver for data persistence.
 
 #### Frontend Development with Angular (2 Days)
 
