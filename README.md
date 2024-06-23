@@ -2,6 +2,46 @@
 
 This document details the updated approach, including login functionality, database schema, and time estimates for building a task list web application for FinStack.
 
+## Time Estimates
+
+### Phase 1 (By June 23rd, 11:59 PM)
+
+ [x]  Documenting approach, database schema, and time estimates (1 Day).
+
+### Phase 2 (By June 28th, 11:59 PM)
+
+#### Backend Development with Flask and PyMongo (1.5 Days)
+
+- June 23rd-24th:
+- [ ] Flask project setup, user model and authentication logic.
+- [x]  Implement Flask endpoints for CRUD operations (Create, Read, Update, Delete) on tasks.
+- [x] Integrate MongoDB interaction with PyMongo driver for data persistence.
+
+#### Frontend Development with Angular (2 Days)
+
+-  June 24th:
+  - [ ] Learn Angular.js.
+  - [ ] Develop login functionality on the frontend (1 Day).
+- June 25th:
+  - [ ] Implement task management features (create, edit, filter, etc.) on the frontend.
+
+#### Integration and Deployment (1 Day)
+
+- June 26th:
+  - [ ] Integrate backend and frontend for a cohesive application.
+  - [ ] Deploy the application to Netlify/Heroku.
+
+#### Documentation and Code Commenting (1 Day)
+
+- June 27th:
+  - [ ] Document the approach, code, and deployment process (1 Day).
+
+#### Buffer: (Optional)
+
+- June 28th: (0.5 Day) - Unforeseen challenges / Improving Frontend.
+
+### Total Estimated Time: 5-6 Days
+
 ## Technology Stack
 
 - **Frontend:** Angular 2+
@@ -69,42 +109,4 @@ A dedicated login page will be implemented on the frontend. Users will be able t
 - Each task will have a delete button to permanently remove it.
 - Clicking the delete button will trigger a DELETE request to a Flask endpoint that removes the corresponding record from the tasks collection.
 
-## Time Estimates
 
-### Phase 1 (By June 23rd, 11:59 PM)
-
- [x]  Documenting approach, database schema, and time estimates (1 Day).
-
-### Phase 2 (By June 28th, 11:59 PM)
-
-#### Backend Development with Flask and PyMongo (1.5 Days)
-
-- June 23rd-24th:
-- [ ] Flask project setup, user model and authentication logic.
-- [x]  Implement Flask endpoints for CRUD operations (Create, Read, Update, Delete) on tasks.
-- [x] Integrate MongoDB interaction with PyMongo driver for data persistence.
-
-#### Frontend Development with Angular (2 Days)
-
--  June 24th:
-  - [ ] Learn Angular.js.
-  - [ ] Develop login functionality on the frontend (1 Day).
-- June 25th:
-  - [ ] Implement task management features (create, edit, filter, etc.) on the frontend.
-
-#### Integration and Deployment (1 Day)
-
-- June 26th:
-  - [ ] Integrate backend and frontend for a cohesive application.
-  - [ ] Deploy the application to Netlify/Heroku.
-
-#### Documentation and Code Commenting (1 Day)
-
-- June 27th:
-  - [ ] Document the approach, code, and deployment process (1 Day).
-
-#### Buffer: (Optional)
-
-- June 28th: (0.5 Day) - Unforeseen challenges / Improving Frontend.
-
-### Total Estimated Time: 5-6 Days
