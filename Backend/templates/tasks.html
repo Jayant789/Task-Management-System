@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Management System</title>
+</head>
+<body>
+    <h1>All Tasks</h1>
+    {% if tasks %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Date Created</th>
+                    <th>Entity Name</th>
+                    <th>Task Type</th>
+                    <th>Time</th>
+                    <th>Contact_person_id</th>
+                    <th>Note</th>
+                    <th>Status</th>
+                    <th>Priority</th>
+                    <th>Labels</th>
+                    </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                <tr>
+                    <td>{{ task.date_created }}</td>
+                    <td>{{ task.entity_name }}</td>
+                    <td>{{ task.task_type }}</td>
+                    <td>{{ task.time }}</td>
+                    <td>{{ task.contact_person_id }}</td>
+                    <td>{{ task.note }}</td>
+                    <td>{{ task.status }}</td>
+                    <td>{{ task.priority }}</td>
+                    <td>{{ task.labels }}</td> 
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No tasks found.</p>
+    {% endif %}
+</body>
+</html>
