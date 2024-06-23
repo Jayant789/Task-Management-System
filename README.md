@@ -1,14 +1,19 @@
 # Task-Management-System
 
-This document details the updated approach, including login functionality, database schema, 
-and time estimates for building a task list web application for FinStack. 
+This document details the updated approach, including login functionality, database schema, and time estimates for building a task list web application for FinStack.
+
 Technology Stack: 
+
 ●  Frontend: Angular 2+ 
 ●  Backend: Python 3.6.x+ with Flask 
 ●  Database: MongoDB (considerations for alternatives MongoDB Atlas/Firebase Storage) 
+
 ●  Hosting:  netlify (considerations for alternatives heroku) 
+
+
 I will utilize MongoDB as a NoSQL document database. Here's the proposed schema structure: 
 Users Collection: 
+
 ●  _id (ObjectId): Unique identifier for the user. 
 ●  username (String): Username for login (unique). 
 ●  password_hash (String): Hashed password for secure storage. 
