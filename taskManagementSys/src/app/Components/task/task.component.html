@@ -1,153 +1,161 @@
 <div class = "container-fluid">
-    <mat-card class="card" appearance="outlined">
-        <mat-card-header class="card-header">
-          <mat-card-title class="card-title">
-            <span>Sales Log</span>
-            <button mat-button style="color: black;"><mat-icon>add_circle</mat-icon>New Task</button>
-            <div class="searchBar">
-                <form [formGroup]="searchForm" (ngSubmit)="onSearchSubmit()">
-                    <input type="text" placeholder="Search..." formControlName="searchValue" />
-                </form>
-            </div>
-        </mat-card-title>
-        </mat-card-header>
-        
-        <mat-card-content>
+    <div class="wrapper"> 
+        <mat-card class="card" appearance="outlined">
+            <mat-card-header class="card-header">
+                <mat-card-title class="card-title">
+                    <span>Sales Log</span>
+                    <button mat-button style="color: black;" (click)="onNewTaskClick()"><mat-icon>add_circle</mat-icon>New Task</button>
+                    <div class="searchBar">
+                        <form [formGroup]="searchForm" (ngSubmit)="onSearchSubmit()">
+                            <input type="text" placeholder="Search..." formControlName="searchValue" />
+                        </form>
+                    </div>
+                </mat-card-title>
+            </mat-card-header>
             
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th >
-                            Date
-                            <mat-icon style="vertical-align: middle;" fontIcon="filter_alt"></mat-icon>
-                            <mat-icon (click)="toggleSort('date')" [ngClass]="{'text-black': sorting.column === 'date'}" style="vertical-align: middle;" fontIcon="unfold_more"></mat-icon>
-                        </th>
-                        <th style=" width: 20%;">
-                            Entity Name
-                            <mat-icon style="vertical-align: middle;" fontIcon="filter_alt"></mat-icon>
-                            <mat-icon (click)="toggleSort('entityName')" [ngClass]="{'text-black': sorting.column === 'entityName'}" style="vertical-align: middle;" fontIcon="unfold_more"></mat-icon>
-                        </th>
-                        <th >
-                            Task Type
-                            <mat-icon style="vertical-align: middle;" fontIcon="filter_alt"></mat-icon>
-                        </th>
-                        <th >
-                            Time
-                            <mat-icon style="vertical-align: middle;" fontIcon="filter_alt"></mat-icon>
-                            <mat-icon (click)="toggleSort('time')" [ngClass]="{'text-black': sorting.column === 'time'}" style="vertical-align: middle;" fontIcon="unfold_more"></mat-icon>
-                        </th>
-                        <th >
-                            Contact Person
-                            <mat-icon style="vertical-align: middle;" fontIcon="filter_alt"></mat-icon>
-                            <mat-icon (click)="toggleSort('contactPerson')" [ngClass]="{'text-black': sorting.column === 'contactPerson'}" style="vertical-align: middle;" fontIcon="unfold_more"></mat-icon>
-                        </th>
-                        <th style=" width: 20%;">
-                            Notes
-                            <mat-icon style="vertical-align: middle;" fontIcon="filter_alt"></mat-icon>
-                        </th>
-                        <th >
-                            Status
-                            <mat-icon style="vertical-align: middle;" fontIcon="filter_alt"></mat-icon>
-                            <mat-icon (click)="toggleSort('status')" [ngClass]="{'text-black': sorting.column === 'status'}" style="vertical-align: middle;" fontIcon="unfold_more"></mat-icon>
-                        </th>
-                        <th >
-                            Action
-                            <mat-icon style="vertical-align: middle;" fontIcon="filter_alt"></mat-icon>
-                        </th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    @for (item of taskList; track $index){
-                    <tr>
-                        <td>{{item.date}}</td>
-                        <td style="color:rgb(13, 113, 195);">{{item.entityName}}</td>
-                        <td>{{item.taskType}}</td>
-                        <td>{{item.time}}</td>
-                        <td>{{item.contactPerson}}</td>
-                        <td>{{item.notes}}</td>
-                        <td [ngClass]="{'text-orange': item.status, 'text-blue': !item.status}">{{item.status ? 'Open':'Closed'}}</td>
-                        <td class="text-center">
-                            <i class = "fa fa-edit text-primary" (click)="onEdit(item)"></i> | 
-                            <i class = "fa fa-trash text-danger" (click)="onDelete(item.id)"></i>
-                        </td>
-                    </tr>
-                }
-                </tbody>
-            </table>
-        </mat-card-content>
-        
-      </mat-card>
+            <mat-card-content>
+                
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th >
+                                Date
+                                <mat-icon style="vertical-align: middle;" fontIcon="filter_alt"></mat-icon>
+                                <mat-icon (click)="toggleSort('date')" [ngClass]="{'text-black': sorting.column === 'date'}" style="vertical-align: middle;" fontIcon="unfold_more"></mat-icon>
+                            </th>
+                            <th style=" width: 20%;">
+                                Entity Name
+                                <mat-icon style="vertical-align: middle;" fontIcon="filter_alt"></mat-icon>
+                                <mat-icon (click)="toggleSort('entityName')" [ngClass]="{'text-black': sorting.column === 'entityName'}" style="vertical-align: middle;" fontIcon="unfold_more"></mat-icon>
+                            </th>
+                            <th >
+                                Task Type
+                                <mat-icon style="vertical-align: middle;" fontIcon="filter_alt"></mat-icon>
+                            </th>
+                            <th >
+                                Time
+                                <mat-icon style="vertical-align: middle;" fontIcon="filter_alt"></mat-icon>
+                                <mat-icon (click)="toggleSort('time')" [ngClass]="{'text-black': sorting.column === 'time'}" style="vertical-align: middle;" fontIcon="unfold_more"></mat-icon>
+                            </th>
+                            <th >
+                                Contact Person
+                                <mat-icon style="vertical-align: middle;" fontIcon="filter_alt"></mat-icon>
+                                <mat-icon (click)="toggleSort('contactPerson')" [ngClass]="{'text-black': sorting.column === 'contactPerson'}" style="vertical-align: middle;" fontIcon="unfold_more"></mat-icon>
+                            </th>
+                            <th style=" width: 20%;">
+                                Notes
+                                <mat-icon style="vertical-align: middle;" fontIcon="filter_alt"></mat-icon>
+                            </th>
+                            <th >
+                                Status
+                                <mat-icon style="vertical-align: middle;" fontIcon="filter_alt"></mat-icon>
+                                <mat-icon (click)="toggleSort('status')" [ngClass]="{'text-black': sorting.column === 'status'}" style="vertical-align: middle;" fontIcon="unfold_more"></mat-icon>
+                            </th>
+                            <th >
+                                Action
+                                <mat-icon style="vertical-align: middle;" fontIcon="filter_alt"></mat-icon>
+                            </th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (item of taskList; track $index){
+                        <tr>
+                            <td>{{item.date}}</td>
+                            <td style="color:rgb(13, 113, 195);">{{item.entityName}}</td>
+                            <td>{{item.taskType}}</td>
+                            <td>{{item.time}}</td>
+                            <td>{{item.contactPerson}}</td>
+                            <td>{{item.notes}}</td>
+                            <td [ngClass]="{'text-orange': item.status, 'text-blue': !item.status}">{{item.status ? 'Open':'Closed'}}</td>
+                            <td class="text-center">
+                                <i class = "fa fa-edit text-primary" (click)="onEdit(item)"></i> | 
+                                <i class = "fa fa-trash text-danger" (click)="onDelete(item.id)"></i>
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </mat-card-content>
+            
+        </mat-card>
+    </div>
 
 
 
-
-
-      
-      <div class="col-4">
+    <div class="col-3 overlay" *ngIf="showTaskForm">
         <!-- Task Form-->
         <div class="card">
-            <div class="card-header bg-primary">
-               <div class="row">
-                   <div class="col-6 text-white">
-                       <h6 class="p-2">{{editMode ? 'Update Task': 'Add Task'}}</h6>
-                   </div>
-                   <div class="col-6 text-end">
-                       <button class="btn btn-info" (click)="onResetForm(taskForm)">
-                           Reset
-                       </button>
-                   </div>
-               </div>
-            </div>
+            
             <div class="card-body">
-                <div class="col-6">
-                    <mat-button-toggle-group [(ngModel)]="task.status" name="status" required aria-label="Font Style" class="no-rounded-corners">
-                      <mat-button-toggle [checked]="true" [ngClass]="{ 'selected-open': task.status, 'mat-button-toggle': !task.status }">Open</mat-button-toggle>
-                      <mat-button-toggle [checked]="false" [ngClass]="{ 'selected-closed': !task.status, 'mat-button-toggle': task.status }">Closed</mat-button-toggle>
-                    </mat-button-toggle-group>
-                  </div>
+                <div class="row">
+                    <div class="col-6">
+                        <h6 class="p-2">{{editMode ? 'Update Task': 'Add Task'}}</h6>
+                    </div>
+                    <div class="col-6">
+                        <mat-button-toggle-group [(ngModel)]="task.status" name="status" required aria-label="Font Style" class="no-rounded-corners">
+                            <mat-button-toggle [checked]="true" [ngClass]="{ 'selected-open': task.status, 'mat-button-toggle': !task.status }">Open</mat-button-toggle>
+                            <mat-button-toggle [checked]="false" [ngClass]="{ 'selected-closed': !task.status, 'mat-button-toggle': task.status }">Closed</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </div>
+                </div>
                 
-               <form class="row g-3" #taskForm="ngForm" (ngSubmit)="onSubmit(taskForm)">
+                
+                <form class="row g-3" #taskForm="ngForm" >
                     <div class="col-12">
                         <input type="text" class="form-control" [(ngModel)] = "task.entityName" name="entityName" required placeholder="Entity Name" id=" ">
                     </div>
-                    <div class="col-6">
-                        <mat-form-field>
-                            <mat-label>Choose a date</mat-label>
-                            <input matInput [matDatepicker]="picker" [(ngModel)] = "task.date"  name="date"  placeholder="Date">
-                            <mat-hint>MM/DD/YYYY</mat-hint>
-                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker #picker></mat-datepicker>
-                          </mat-form-field>
+                    <div class="row">
+                        <div class="col-6">
+                            <input type="date" class="form-control date-cal" [(ngModel)] = "task.date"  name="date" required placeholder="Date" id=" ">
+                        </div>
+                        <div class="col-6">
+                            <div class="row d-flex no-gutters">
+                                <select class="time-dropdown form-control" id="hour" name="hour" required placeholder="Hrs">
+                                    <option *ngFor="let hour of hours; let i = index" [value]="hour">{{ hour }}</option>
+                                </select>
+                                <select class="time-dropdown form-control" id="minute" name="minute" required>
+                                    <option *ngFor="let minute of minutes; let i = index" [value]="minute">{{ minute }}</option>
+                                </select>
+                                <select class="time-dropdown form-control" id="meridian" name="meridian" required>
+                                    <option value="AM">AM</option>
+                                    <option value="PM">PM</option>
+                                </select>
+                            
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-6">
-                        <input type="text" class="form-control" [(ngModel)] = "task.time"  name="time" required placeholder="Time" id=" ">
-                    </div>
-                    
+                        
                     <div class="col-12">
                         <select class="form-select" required [(ngModel)] = "task.taskType" name="taskType">
                             <option value = "">Select Task Type</option>
                             @for (item of taskTypeList; track $index){
                                 <option>{{item}}</option>
                             }
-                           
+                        
                         </select>
                     </div>
-                    
+                        
                     <div class="col-12">
                         <input type="text" class="form-control"  [(ngModel)] = "task.contactPerson" name="contactPerson" required placeholder="Contact Person" id=" ">
                     </div>
                     <div class="col-12">
                         <textarea cols="12" rows="5" class="form-control"  [(ngModel)] = "task.notes" name="notes"  placeholder="Notes (optional)" id=" "></textarea>
                     </div>
-                    
-                    
-                    <div class="col-12">
-                        <button class="btn btn-primary w-100" type="submit">{{editMode ? 'Update': 'Save'}}</button>
+                        
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="btn btn-info cBttn w-100" (click)="onClosePopup(taskForm)">
+                                Cancel
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-primary sBttn w-100" (click)="onSubmit(taskForm)" type="submit">{{editMode ? 'Update': 'Save'}}</button>
+                        </div>
+                            
                     </div>
-               </form>
+                </form>
             </div>
-       </div>
-    </div>
-
+        </div>
+   </div>
 </div>

@@ -46,6 +46,7 @@
 
   .no-rounded-corners {
     border-radius: 0 !important;
+    margin-bottom: 20px;
   }
   .text-orange {
     color: orange;
@@ -69,4 +70,54 @@
     border-radius: 0;
     border: 1px solid #090101;
     padding: 5px 10px;
+  }
+
+  .time-dropdown {
+    max-width: 3rem;
+    margin-top: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-radius: 0;
+  }
+
+  .mat-form-field {
+    width: 100%;
+  }
+
+  .form-control {
+    border: 0px;
+    background-color: #f2f2f2;
+  }
+
+  .date-cal {
+    margin-top: 10px;
+  }
+
+  .cBttn{
+    margin-top: 20px;
+    border-radius: 0;
+    border: 0px;
+    color: black;
+    background-color: white;
+  }
+
+  .sBttn{
+    margin-top: 20px ;
+    border-radius: 0;
+    color: white;
+    background-color:rgb(40,76,108);
+  }
+  
+  .overlay{
+    position: absolute;
+    top:30px;
+    left:40%;
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    z-index: 1;
+    /* width: 100%;
+    height: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
   }

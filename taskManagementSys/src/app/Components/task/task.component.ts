@@ -6,6 +6,7 @@ import { MatTableModule} from '@angular/material/table';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {provideNativeDateAdapter} from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -39,6 +40,7 @@ import { Sorting } from '../../Model/sorting';
     MatCheckboxModule,
     MatOptionModule,
     ReactiveFormsModule,
+    MatSelectModule
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './task.component.html',
@@ -56,6 +58,14 @@ export class TaskComponent implements OnInit {
     notes :  "",
     status: true,
   } 
+  
+  showTaskForm = false;
+  onNewTaskClick() {
+    this.showTaskForm = true;
+  }
+
+  minutes: number[] = Array.from({length: 60}, (_, i) => i + 1);
+  hours: number[] = Array.from({length: 12}, (_, i) => i + 1);
 
   searchValue: string = '';
   sorting: Sorting ={
@@ -108,6 +118,7 @@ export class TaskComponent implements OnInit {
         this.getTaskList();
         this.editMode=false;
         form.reset();
+        this.showTaskForm = false;
         this._toasterService.success('Task Updated Succesfully','Success')
         });
         
@@ -118,22 +129,25 @@ export class TaskComponent implements OnInit {
         this._taskService.addTask(this.task).subscribe((res) => {
         this.getTaskList();
         form.reset();
+        this.showTaskForm = false;
         this._toasterService.success('Task added Succesfully','Success')
         });
       }
     
   }
 
-  onResetForm(form : NgForm)
+  onClosePopup(form : NgForm)
   {
     form.reset();
     this.editMode=false;
     this.getTaskList();
+    this.showTaskForm = false;
   }
 
   onEdit(taskdata: TaskModel){
     this.task = taskdata;
     this.editMode =true;
+    this.showTaskForm = true;
   }
 
   onDelete(id : any)
